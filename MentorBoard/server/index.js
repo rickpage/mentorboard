@@ -2,10 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const User = require('./db/User');
 
 const messages = require('./db/messages');
 
 const app = express();
+
 
 app.use(morgan('tiny'));
 app.use(cors());
@@ -16,6 +18,18 @@ app.get('/', (req, res) => {
     message: 'full stack message board! 🎉'
   });
 });
+
+app.post('/register', (req, res) => {
+  User.create(req.body)
+  .then(function(dbUser) {
+    console.log(dbUser);
+    res.json(dbUser);
+  })
+  .catch(function(err) {
+    res.json(err);
+  });
+  
+})
 
 app.get('/messages', (req, res) => {
   messages.getAll().then((messages) => {
