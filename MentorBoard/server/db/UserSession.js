@@ -1,19 +1,18 @@
-var mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+const mongoose = require ('mongoose');
 
-mongoose.connect('mongodb://localhost/messageboard')
-  .then(() =>  console.log('connection succesful'))
-  .catch((err) => console.error(err));
+const UserSessionSchema = new mongoose.Schema({
+    userId:{
+        type: Number,
+        default: -1,
+    },
+    timestamp: {
+        type: Date,
+        default: Date.now,
 
-
-const UserSchema = new mongoose.Schema({
-    userName:{
-        type: String,
-        default:'',
     },
     password: {
         type: String,
-        default:'',
+        default: '',
     },
     isDeleted: {
         type: Boolean,
