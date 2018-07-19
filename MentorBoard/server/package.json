@@ -11,6 +11,7 @@
   "author": "w3cj <cj@null.computer>",
   "license": "MIT",
   "dependencies": {
+    "bcrpyt": "^2.0.0",
     "bcrypt": "^3.0.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
@@ -22,6 +23,7 @@
     "monk": "^6.0.6",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
     "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
