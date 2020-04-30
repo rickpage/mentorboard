@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "w3cj <cj@null.computer>",
@@ -24,9 +26,11 @@
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
-    "passport-jwt": "^4.0.0"
+    "passport-jwt": "^4.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "nodemon": "^1.17.4"
-  }
+  },
+  "snyk": true
 }
